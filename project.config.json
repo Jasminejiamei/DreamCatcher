@@ -11,6 +11,8 @@
 	"appid": "wxd8a6861bb06de8c8",
 	"projectname": "Dreamcatcher",
 	"libVersion": "2.2.5",
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
 	"condition": {
 		"search": {
 			"current": -1,
