@@ -1,7 +1,9 @@
 {
   "cloud": true,
+  
   "pages": [
     "pages/index/index",
+    "pages/indexOld/index",
     "pages/userConsole/userConsole",
     "pages/storageConsole/storageConsole",
     "pages/databaseGuide/databaseGuide",
@@ -9,14 +11,20 @@
     "pages/deployFunctions/deployFunctions",
     "pages/chooseLib/chooseLib"
   ],
+  
   "window": {
     "backgroundColor": "#F6F6F6",
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#F6F6F6",
-    "navigationBarTitleText": "云开发 QuickStart",
+    "navigationBarTitleText": "DreamCatcher",
     "navigationBarTextStyle": "black"
   },
+
   "usingComponents": {
-    "van-button": "vant-weapp/button"
-  }
+    "van-button": "vant-weapp/button",
+    "van-icon": "vant-weapp/icon",
+    "van-datetime-picker": "vant-weapp/datetime-picker",
+    "van-progress": "vant-weapp/progress"
+  },
+  "sitemapLocation": "sitemap14.json"
 }
