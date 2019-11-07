@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 10.26
+=======
+# 10月26日更改日记
+>>>>>>> 1aaa97dc2835c1f8a2241fecfc7b5c01daf751e0
 ## 启动项目的步骤
 
 由于npm管理工具包已安装,download本项目后，要安装no_module依赖包，以下是安装步骤
@@ -36,5 +40,7 @@
 
 - [云开发文档](https://developers.weixin.qq.com/miniprogram/dev/wxcloud/basis/getting-started.html)
 
+## 11.07日
+统一好目录，准备开发
 
 
