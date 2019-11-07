@@ -1,0 +1,19 @@
+{
+  "name": "dreamcatcher",
+  "version": "1.0.0",
+  "description": "10.26\r ## 启动项目的步骤",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jasminejiamei/DreamCatcher.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jasminejiamei/DreamCatcher/issues"
+  },
+  "homepage": "https://github.com/Jasminejiamei/DreamCatcher#readme"
+}
