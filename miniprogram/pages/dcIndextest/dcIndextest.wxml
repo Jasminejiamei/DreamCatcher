@@ -1,0 +1,13 @@
+<button class="addButton "bindtap="addTarget">添加目标</button>
+
+
+<view class="target" wx:for="{{targets}}" wx:key="{{index}}">
+   <view>结束时间: "{{item.endtime}}"</view>
+   <view>标签: "{{item.targetLabel}}"</view>
+   <view>目标详情: "{{item.targetDetail}}"</view>
+   <button  bindtap="clickLabel"
+   data-targetindex="{{index}}"
+   class="target-label">{{item.targetLabel}}</button>
+</view>
+
+

@@ -3,6 +3,7 @@
   "pages": [
     "pages/logintest/logintest",
     "pages/dcIndex/dcIndex",
+    "pages/dcIndextest/dcIndextest",
     "pages/login/login",
     "pages/addTarget/addTarget",
     "pages/targetGround/targetGround",

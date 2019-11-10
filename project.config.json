@@ -53,6 +53,12 @@
 					"pathName": "pages/logintest/logintest",
 					"query": "",
 					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/dcIndextest/dcIndextest",
+					"pathName": "pages/dcIndextest/dcIndextest",
+					"scene": null
 				}
 			]
 		}
