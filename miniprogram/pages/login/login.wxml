@@ -1,2 +1,47 @@
 <!--miniprogram/pages/login.wxml-->
-<text>miniprogram/pages/login.wxml</text>
+<!--<text>miniprogram/pages/login.wxml</text>-->
+  
+
+<view class="container">
+  <view class="remind-box" wx:if="{{remind}}">
+    <image class="remind-img" src="/images/more/loading.gif"></image>
+  </view>
+  <block wx:else>
+  <!-- <text >DreamCatcher</text> -->
+<view class="context"><text>DreamCatcher</text></view>
+    <!-- <image class="title" src="/images/more/title8.png"></image> -->
+    <view class="content">
+    
+      <view class="hd" style="transform:rotateZ({{angle}}deg);">
+        <image class="logo" src="{{userInfo.avatarUrl}}"></image>
+        <image class="wave" src="/images/more/wave.png" mode="aspectFill"></image>
+        <image class="wave wave-bg" src="/images/more/wave.png" mode="aspectFill"></image>
+      </view>
+      <view class="bd">
+         <!--<image class="smalltitle" src="/images/more/confirm-word1.png"></image>这里可以用闹钟图片-->
+        <!-- <view class="confirm-btn" bindtap='  goToIndex'> -->
+         <view class="confirm-btn" bindtap='   bindGetUserInfo'>
+          <text >立即登录</text>
+        </view>
+      
+      </view>
+    </view>
+  </block>
+</view>
+  
+<!-- <view wx:if="{{canIUse}}">
+ <view class='header'>
+  <image src='/images/logo.png'></image>
+ </view>
+  
+ <view class='content'>
+  <view>申请获取以下权限</view>
+  <text>获得你的公开信息(昵称，头像等)</text>
+ </view>
+  
+ <button class='bottom' type='primary' open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="bindGetUserInfo">
+  授权登录
+ </button>
+</view>
+  
+<view wx:else>请升级微信版本</view> -->
