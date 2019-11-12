@@ -1,2 +1,9 @@
-<!--miniprogram/pages/dcIndex/dcIndex.wxml-->
-<text>miniprogram/pages/dcIndex/dcIndex.wxml</text>
+<!--miniprogram/pages/dcIndex0/dcIndex.wxml-->
+
+  <view class='wumubiao' >
+   <view class='container'>
+    <image  src="/images/note.png" style="width:{{200}}px;;height:{{200}}px;"></image> 
+    <text space="emsp">   当前还没有目标喔，\n快去点击下方“+”号添加目标吧</text>
+   </view>
+ </view>
+

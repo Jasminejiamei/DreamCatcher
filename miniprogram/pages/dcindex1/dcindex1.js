@@ -1,19 +1,13 @@
-// miniprogram/pages/dcIndex/dcIndex.js
+// miniprogram/pages/dcindex1/dcindex1.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-     
+
   },
 
-  /**
-   * 定义一个事件处理函数
-   */
-  viewTap:function(){
-    
-  },
   /**
    * 生命周期函数--监听页面加载
    */

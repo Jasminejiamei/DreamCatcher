@@ -1,2 +1,35 @@
 <!--miniprogram/pages/addTarget/addTarget.wxml-->
-<text>miniprogram/pages/addTarget/addTarget.wxml</text>
+<view class="wrap">
+<view class="content">  
+<text>选择目标结束时间：</text>
+<!-- 日期选择器 -->
+<view class="section">
+  <picker mode="date" value="{{date}}" start="{{nowTime}}"  bindchange="bindDateChange">
+    <view class="picker">
+    <van-icon class="calender" name="calender-o" />Enter Date:{{date}}
+    </view>
+  </picker>
+</view>
+<text>输入目标详情：</text>
+<textarea class="tar-content" bindinput="targetContent"  placeholder="不要太贪心哦，50字就够啦(*^▽^*)" placeholder-style="font-size:25rpx"></textarea>
+<text>选择一个目标风格标签：</text>
+<view class="flag">
+<block wx:for="{{buttons}}" wx:key="buttons">
+  <button class='{{item.checked?"checked_button":"normal_button"}}' data-id='{{item.id}}' bindtap='radioButtonTap'><van-icon name='{{item.src}}' />{{item.name}}</button>
+  </block>
+</view>
+<van-checkbox value="{{checked}}" checked="{{check}}" class="checkbox" shape="square" bind:change="onChange" bind="niming">是否上传至目标广场</van-checkbox>
+
+<!-- 匿名弹出框 -->
+<view>
+  <modal title="提示框" hidden="{{modalHidden}}" confirm-text="是" cancel-text="否" bindconfirm="modalBindconfirm" bindcancel="modalBindcancel">是否匿名？
+</modal>
+</view>
+
+</view>
+<!-- 将保存放到底部 -->
+<view class="footer">
+<van-button size="small" color="#7232dd"  bindtap="save">保存</van-button>
+<!-- <button size="mini" type="primary">保存</button> -->
+</view>
+</view>
