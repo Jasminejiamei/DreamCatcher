@@ -8,6 +8,13 @@
    <button  bindtap="clickLabel"
    data-targetindex="{{index}}"
    class="target-label">{{item.targetLabel}}</button>
+   <button bindtap="clickDelete"
+    data-targetindex="{{index}}"
+    class="target-label"
+   >
+   删除
+   </button>
+
 </view>
 
 
