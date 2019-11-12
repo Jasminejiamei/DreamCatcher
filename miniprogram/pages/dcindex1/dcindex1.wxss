@@ -1,0 +1,25 @@
+/* miniprogram/pages/dcindex1/dcindex1.wxss */
+.c0{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+.b0{
+  display:flex;
+  justify-content: center;
+}
+.d0{
+  display: flex;
+  justify-content: space-around;
+}
+.a{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  position: absolute
+}
+.kg{
+color:white
+}
