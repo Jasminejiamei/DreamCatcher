@@ -1,1 +1,15 @@
 /* miniprogram/pages/dcIndex/dcIndex.wxss */
+.wumubiao{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  position: absolute
+}
+.wumubiao.container{
+  width: 200rpx;
+  height: 200rpx;
+  text-align: center;
+}
+

@@ -1,0 +1,16 @@
+<!--miniprogram/pages/dcindex1/dcindex1.wxml-->
+<view class='a'>
+ <view class="c0"> 
+  <image src="/images/目标1.png " style="width:80px;height:80px"></image> 
+  <text class='kg' space="emsp">   1</text>
+  <image src="/images/目标2.png " style="width:80px;height:80px"></image> 
+ </view>
+  <view class="b0"> 
+  <image src="/images/note.png" style="width:{{200}}px;;height:{{200}}px;"></image>
+ </view>
+ <view class="d0">
+  <image src="/images/目标3.png " style="width:100px;height:80px"></image>
+  <image src="/images/目标4.png " style="width:80px;height:80px"></image>
+  <image src="/images/目标5.png " style="width:120px;height:60px"></image>
+ </view>
+</view>
