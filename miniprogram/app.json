@@ -1,9 +1,9 @@
 {
   "cloud": true,
   "pages": [
+    "pages/addTarget/addTarget",
     "pages/dcIndex/dcIndex",
     "pages/login/login",
-    "pages/addTarget/addTarget",
     "pages/targetGround/targetGround",
     "pages/targetProgress/targetProgress"
   ],
