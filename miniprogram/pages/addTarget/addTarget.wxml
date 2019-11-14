@@ -19,17 +19,16 @@
   </block>
 </view>
 <van-checkbox value="{{checked}}" checked="{{check}}" class="checkbox" shape="square" bind:change="onChange" bind="niming">是否上传至目标广场</van-checkbox>
-
 <!-- 匿名弹出框 -->
 <view>
   <modal title="提示框" hidden="{{modalHidden}}" confirm-text="是" cancel-text="否" bindconfirm="modalBindconfirm" bindcancel="modalBindcancel">是否匿名？
 </modal>
 </view>
-
 </view>
+<!-- 用于判断信息是否填写完整 -->
+<van-notify id="van-notify" />
 <!-- 将保存放到底部 -->
 <view class="footer">
-<van-button size="small" color="#7232dd"  bindtap="save">保存</van-button>
-<!-- <button size="mini" type="primary">保存</button> -->
+<van-button size="small" color="#7232dd"  bindtap="addTarget">保存</van-button>
 </view>
 </view>
