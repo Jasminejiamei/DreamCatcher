@@ -53,6 +53,32 @@
 					"pathName": "pages/dcindex1/dcindex1",
 					"query": "",
 					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/addTarget/addTarget",
+					"pathName": "pages/addTarget/addTarget",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/dcIndextest/dcIndextest",
+					"pathName": "pages/dcIndextest/dcIndextest",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/login/login",
+					"pathName": "pages/login/login",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/logintest/logintest",
+					"pathName": "pages/logintest/logintest",
+					"scene": null
 				}
 			]
 		}
