@@ -63,8 +63,8 @@
 				},
 				{
 					"id": 2,
-					"name": "pages/logintest/logintest",
-					"pathName": "pages/logintest/logintest",
+					"name": "pages/dcIndextest/dcIndextest",
+					"pathName": "pages/dcIndextest/dcIndextest",
 					"query": "",
 					"scene": null
 				}

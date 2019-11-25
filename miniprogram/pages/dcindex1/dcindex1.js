@@ -13,9 +13,8 @@ Page({
    date:'2019-11-14',
    focus:false,
    targetindex:0,
-   targets:[
-     {endtime:'2019-11.27'}
-   ]  //应该是dcindextest里的数组，但是我不会调
+   targets:[],  //应该是dcindextest里的数组，但是我不会调
+   lookfortarget: [], //当用户点击了某个标签后存放此标签对应的目标记 
   },
 
   /**
@@ -28,8 +27,7 @@ Page({
     }).then(res => {
       //从target数据库中获取属于当前这个用户的目标
       db.collection('target').where({
-        // _openid: res.result.openid
-        _openid:q80pGeSrpqOp06vk5I
+        _openid: res.result.openid
       }).get().then(res => {
         //当前这个用户还未添加过目标
         if (res.data.length == 0) {
@@ -42,6 +40,7 @@ Page({
           this.setData({
             targets: res.data,
           })
+          console.log(this.data.targets);
         }
       })
     })
@@ -63,32 +62,43 @@ Page({
   target1: function (event) {
     this.setData({
       show: 1,
-      targetindex:1
+      targetindex:0,
+      lookfortarget:this.data.targets[0],
     })
+    this.data.lookfortarget.targetindex = this.data.targetindex;
+    // console.log(this.data.lookfortarget)
   },
   target2: function (event) {
     this.setData({
       show: 1,
-      targetindex:2
+      targetindex:1,
+      lookfortarget: this.data.targets[1],
     })
+    this.data.lookfortarget.targetindex = this.data.targetindex;
   },
   target3: function (event) {
     this.setData({
       show: 1,
-      targetindex: 3
+      targetindex: 2,
+      lookfortarget: this.data.targets[2],
     })
+    this.data.lookfortarget.targetindex = this.data.targetindex;
   },
   target4: function (event) {
     this.setData({
       show: 1,
-      targetindex: 4
+      targetindex: 3,
+      lookfortarget: this.data.targets[3],
     })
+    this.data.lookfortarget.targetindex = this.data.targetindex;
   },
   target5: function (event) {
     this.setData({
       show: 1,
-      targetindex: 5
+      targetindex: 4,
+      lookfortarget: this.data.targets[4],
     })
+    this.data.lookfortarget.targetindex = this.data.targetindex;
   },
    /**
    * 关闭第一个目标
@@ -107,69 +117,61 @@ Page({
   bindTextAreaBlur:function(e){
     console.log(e.detail.value)
   },
+
   jisuan:function(event){
     var t=new Date();
     var year = t.getFullYear();
     var month = t.getMonth()+1;
     var date = t.getDate(); 
-    var newtargetdays = year+'-'+month+'-'+date;
-    console.log(newtargetdays);
-    console.log(this.data.date);
-    var newdays = newtargetdays - this.data.date;
+    var startTime = year+'-'+month+'-'+date;
+    console.log(startTime);
+    console.log(this.data.lookfortarget.endtime);
+    var startdate=new Date(startTime.replace(/-/g,"/"));
+    var enddate = new Date(this.data.lookfortarget.endtime.replace(/-/g, "/"));
+    var ms=enddate.getTime()-startdate.getTime();
+    var newdays = parseInt(ms / (1000*60*60*24));
     console.log(newdays);
     this.setData({ 
-        targetday:this.data.targetday-t
+        targetday:newdays
     })
   },
-
-
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
+  clickdelete:function(event){
+    INDEX = this.data.lookfortarget.targetindex;
+    console.log(INDEX);
+    this.deleteTarget(INDEX);
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
-  }
+  deleteTarget: function (INDEX) {
+    var index = this.data.targets[INDEX]._id;
+    wx.showModal({
+      title: '温馨提示',
+      content: '确认删除？',
+      success: function (res) {
+        if (res.confirm) {
+          db.collection('target').doc(index).remove()
+            .then(res => {
+              wx.showToast({
+                title: '删除成功',
+                icon: '删除成功',
+                duration: 1000
+              });
+            }).catch(err => {
+              console.log(err);
+            })
+        }
+      }
+    })
+  //   for(let i = 0;i<this.data.targets.length;i++){
+  //     if(this.data.targets._id == index);
+  //     var newdata = this.data.targets.splice(i, 1);
+  //     this.setData({
+  //       show: 0,
+  //       targets: newdata
+  //     })
+  //   }
+  //   console.log(this.data.targets);
+  // }
+    this.setData({
+      show: 0,
+    })
+    }
 })

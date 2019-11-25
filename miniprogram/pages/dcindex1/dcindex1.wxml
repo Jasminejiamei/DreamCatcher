@@ -1,18 +1,42 @@
 <!--miniprogram/pages/dcindex1/dcindex1.wxml-->
-<view class='a' wx:if="{{targets.length==0}}">
- <view class="c0" v-if="{{sftw == 1}}"> 
-  <image src="/images/目标1.png " style="width:80px;height:80px" bindtap="target1">
-  </image> 
-  <text class='kg' space="emsp">   1</text>
-  <image src="/images/目标2.png " style="width:100px;height:90px" bindtap="target2"></image> 
+<view class='a' wx:if="{{targets.length>0}}">
+ <view class="c0"> 
+
+  <image src="/images/one.png " 
+  style="width:80px;height:80px" 
+  
+  wx-if="{{targets.length>=1}}"></image> 
+  <p style="position:relative;top:15px;right:55px;" bindtap="target1">{{targets[0].targetLabel}}</p>
+  <!-- <text class='kg' space="emsp">  1</text> -->
+
+  <image src="/images/two.png "
+   style="width:100px;height:90px;position:relative;left:40px" 
+   
+   wx-if="{{targets.length>=2}}" > </image> 
+   <p style="position:relative;top:20px;right:28px;" bindtap="target2">{{targets[1].targetLabel}}</p>
  </view>
+
   <view class="b0"> 
-  <image src="/images/note.png" style="width:{{200}}px;;height:{{200}}px;" ></image>
+  <image src="/images/note.png" 
+   style="width:{{200}}px;;height:{{200}}px;"></image>
  </view>
+
  <view class="d0">
-  <image src="/images/目标3.png " style="width:100px;height:80px" bindtap="target3"></image>
-  <image src="/images/目标4.png " style="width:50px;height:50px" bindtap="target4"></image>
-  <image src="/images/目标5.png " style="width:120px;height:70px" bindtap="target5"></image>
+  <image src="/images/three.png " 
+  style="width:100px;height:80px" 
+  wx-if="{{targets.length>=3}}" ></image>
+  <p style="position:relative;top:-35px;right:68px;" bindtap="target3" >{{targets[2].targetLabel}}</p>
+
+  <image src="/images/four.png " 
+  style="width:50px;height:50px;position:relative;bottom:30px;" 
+  wx-if="{{targets.length>=4}}" ></image>
+  <p style="position:relative;top:-57px;right:37px;" bindtap="target4" >{{targets[3].targetLabel}}</p>
+
+  <image src="/images/five.png " 
+  style="width:90px;height:70px" 
+  wx-if="{{targets.length>=5}}" ></image>
+  <p style="position:relative;top:-30px;right:60px;" bindtap="target5" >{{targets[4].targetLabel}}</p>
+
  </view>
 </view>
 
@@ -24,9 +48,13 @@
   </view>
  <view class="date">
    <view>当前选择的结束时间:</view>
-   <picker mode="date" value="{{date}}" start="2019-11-15" end="2100-09-01" bindchange="bindDateChange">    
+   <picker mode="date" 
+   value="{{lookfortarget.endtime}}" 
+   start="2019-11-15" 
+   end="2100-09-01" 
+   bindchange="bindDateChange">    
    <view class="picker-wrp">
-      <view class="choose" >{{date}}</view>
+      <view class="choose" >{{lookfortarget.endtime}}</view>
       <image src="/images/date.png" style="width:20px;height:20px" ></image>
     </view>
     </picker>
@@ -34,7 +62,7 @@
  <view class="dream">
    <view>目标详情：</view>
    <view class="textarea" >
-     <textarea bindblur="bindTextAreaBlur" auto-height value="多行输入"></textarea>
+     <textarea bindblur="bindTextAreaBlur" auto-height value="{{lookfortarget.targetDetail}}"></textarea>
     </view>  
  </view>
  <view class="comculate" >
@@ -50,13 +78,13 @@
    <button form-type="submit" style="font-size:25rpx;height:0.8cm;width=2cm;margin-righr:0.5cm">保存修改</button>
    </view>
    <view class="bt2" >
-   <button style="font-size:25rpx;height:0.8cm;width=2cm;margin-left:0.9cm">删除目标</button>
+   <button style="font-size:25rpx;height:0.8cm;width=2cm;margin-left:0.9cm" bindtap="clickdelete" data-index="{{lookfortarget.targetindex}}">>删除目标</button>
    </view>
  </view>
 </form>
 </view>
 
- <view class='wumubiao' wx:if="{{targets.length!=0}}" >
+ <view class='wumubiao' wx:if="{{targets.length==0}}" >
    <view class='container'>
     <image  src="/images/note.png" style="width:{{200}}px;;height:{{200}}px;"></image> 
     <text space="emsp">   当前还没有目标喔，\n快去点击下方“+”号添加目标吧</text>
