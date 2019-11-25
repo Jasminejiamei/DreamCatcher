@@ -20,8 +20,9 @@ Page({
       { id: 2, name: '旅游', src: 'logistics' },
       { id: 3, name: '技能', src: 'award-o' },
       { id: 4, name: '其他', src: 'good-job-o' }],
+    targets: []
   },
-
+  
   /**
    * 生命周期函数--监听页面加载
    */
@@ -88,9 +89,42 @@ Page({
   },
   // 保存点击事件需要检查输入的内容
   addTarget: function (e) {
+    //先获取用户的openid
+    wx.cloud.callFunction({
+      name: 'login'
+    }).then(res => {
+      //从target数据库中获取属于当前这个用户的目标
+      db.collection('target').where({
+        _openid: res.result.openid
+      }).get().then(res => {
+        //当前这个用户还未添加过目标
+        if (res.data.length == 0) {
+          wx.showToast({
+            title: '当前没有目标噢！',
+            icon: 'none',
+            duration: 2000
+          })
+        } else {
+          this.setData({
+            targets: res.data,
+          })
+          console.log(this.data.targets.length);
+        }
+      })
+    })
     //检查信息是否填写完整
     if (this.data.date == null || this.data.content == null) {
-      Notify('信息填写不完整，请检查时间和目标');
+      wx.showModal({
+        title: '',
+        content: '信息填写不完整，请检查时间和目标',
+      })
+    }else if(this.data.targets.length >= 5){
+      console.log(this.data.targets.length)
+      wx.showToast({
+        title: '已超过五个目标啦~先前去完成噢！',
+        icon: 'none',
+        duration: 2000
+      })
     } else {
       // let id = e.currentTarget.dataset.id;
       for (let i = 0; i < this.data.buttons.length; i++) {
@@ -118,7 +152,7 @@ Page({
           mask: true
         });
         wx.switchTab({
-          url: '../dcIndex/dcIndex',
+          url: '../dcindex1/dcindex1',
         })
         this.onLoad();
       }).catch(err => {
