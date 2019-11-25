@@ -1,5 +1,5 @@
 <!--miniprogram/pages/dcindex1/dcindex1.wxml-->
-<view class='a' wx:if="{{target>0}}">
+<view class='a' wx:if="{{targets.length>0}}">
  <view class="c0"> 
   <image src="/images/目标1.png " style="width:80px;height:80px" bindtap="target1">
   </image> 
@@ -56,7 +56,7 @@
 </form>
 </view>
 
- <view class='wumubiao' wx:if="{{target==0}}" >
+ <view class='wumubiao' wx:if="{{targets.length==0}}" >
    <view class='container'>
     <image  src="/images/note.png" style="width:{{200}}px;;height:{{200}}px;"></image> 
     <text space="emsp">   当前还没有目标喔，\n快去点击下方“+”号添加目标吧</text>

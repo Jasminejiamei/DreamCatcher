@@ -56,15 +56,15 @@
 				},
 				{
 					"id": -1,
-					"name": "pages/dcIndextest/dcIndextest",
-					"pathName": "pages/dcIndextest/dcIndextest",
+					"name": "pages/dcIndex/dcIndex",
+					"pathName": "pages/dcIndex/dcIndex",
 					"query": "",
 					"scene": null
 				},
 				{
-					"id": -1,
-					"name": "pages/dcIndex/dcIndex",
-					"pathName": "pages/dcIndex/dcIndex",
+					"id": 2,
+					"name": "pages/logintest/logintest",
+					"pathName": "pages/logintest/logintest",
 					"query": "",
 					"scene": null
 				}

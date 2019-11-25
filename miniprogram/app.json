@@ -3,10 +3,10 @@
   "pages": [
     "pages/dcindex1/dcindex1",
     "pages/dcIndex/dcIndex",
+    "pages/addTarget/addTarget",
     "pages/logintest/logintest",
     "pages/dcIndextest/dcIndextest",
     "pages/login/login",
-    "pages/addTarget/addTarget",
     "pages/targetGround/targetGround",
     "pages/targetProgress/targetProgress"
     
@@ -34,7 +34,7 @@
         "selectedIconPath": "images/我的目标先.png"
       },
       {
-        "pagePath": "pages/dcIndex/dcIndex",
+        "pagePath": "pages/addTarget/addTarget",
         "iconPath": "images/添加.png",
         "selectedIconPath": "images/添加.png"
       },

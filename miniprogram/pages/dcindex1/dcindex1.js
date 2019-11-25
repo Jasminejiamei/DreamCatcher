@@ -1,4 +1,6 @@
 // miniprogram/pages/dcindex1/dcindex1.js
+const db = wx.cloud.database()
+var INDEX = '' //获取用户点击了的标签对应的目标的index
 Page({
 
   /**
@@ -11,8 +13,38 @@ Page({
    date:'2019-11-14',
    focus:false,
    targetindex:0,
-   target:1  //应该是dcindextest里的数组，但是我不会调
+   targets:[]  //应该是dcindextest里的数组，但是我不会调
   },
+
+  /**
+   * 监听页面加载,获取当前用户目标
+   */
+  onLoad: function (options) {
+    //先获取用户的openid
+    wx.cloud.callFunction({
+      name: 'login'
+    }).then(res => {
+      //从target数据库中获取属于当前这个用户的目标
+      db.collection('target').where({
+        _openid: res.result.openid
+      }).get().then(res => {
+        //当前这个用户还未添加过目标
+        if (res.data.length == 0) {
+          wx.showToast({
+            title: '当前没有目标噢！',
+            icon: 'none',
+            duration: 2000
+          })
+        } else {
+          this.setData({
+            targets: res.data,
+          })
+        }
+      })
+    })
+  },
+
+
   /**
    * 查看目标
    */
@@ -74,19 +106,20 @@ Page({
   },
   jisuan:function(event){
     var t=new Date();
-    console.log(t);
-    console.log(this.data.targetday)
+    var year = t.getFullYear();
+    var month = t.getMonth()+1;
+    var date = t.getDate(); 
+    var newtargetdays = year+'-'+month+'-'+date;
+    console.log(newtargetdays);
+    console.log(this.data.date);
+    var newdays = newtargetdays - this.data.date;
+    console.log(newdays);
     this.setData({ 
         targetday:this.data.targetday-t
     })
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
 
-  },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
