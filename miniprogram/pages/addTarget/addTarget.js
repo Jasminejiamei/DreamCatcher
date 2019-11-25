@@ -7,10 +7,12 @@ var canSend;
 //获取标签id
 let id ;
 Page({
+
   /**
    * 页面的初始数据
    */
   data: {
+
    modalHidden:true,
    check:false,
    idUpload:false,
@@ -26,35 +28,10 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    // var time =util.formatTime(new Date());
-    wx.setNavigationBarTitle({
-      title: '添加目标',
-    }),
-    // 默认第一个按钮被选中
-   this.data.buttons[0].checked = true;
-    this.setData({
-      buttons: this.data.buttons,
-      nowTime:new Date()
-    })
-  },
-  
-  // 时间
-  bindDateChange:function(e){
-    this.setData({
-      date:e.detail.value
-    })
-  },
-  // 获取输入文本
-  targetContent:function(e){
-    this.setData({
-      content: e.detail.value
-    });
-  },
-
 // 设置选中标签
   radioButtonTap: function (e) {
     // 选中的id
-     id = e.currentTarget.dataset.id
+     id = e.currentTarget.dataset.id;
     for (let i = 0; i < this.data.buttons.length; i++) {
       if (this.data.buttons[i].id == id) {
         //当前点击的位置为true即选中
@@ -151,5 +128,7 @@ Page({
       modalHidden: !this.data.modalHidden,
       isAnonymous:!this.data.isAnonymous
     });
+
+  }
   }
 })

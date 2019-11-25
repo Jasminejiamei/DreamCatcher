@@ -23,3 +23,84 @@
 .kg{
 color:white
 }
+.checkdream{
+  background-color:#0033CC;
+  border-radius: 20px;
+  top:2.3cm;
+  left:1.2cm;
+  width:6cm;
+  height: 8cm;
+  color:aliceblue;
+  display: flex;
+  position: absolute;
+  flex-direction: column;
+}
+.titleclose{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  font-size: 33rpx;
+}
+.close{
+  right: 0.3cm;
+  top:0.3cm;
+  position: absolute;
+}
+.date{
+  flex-direction: column;
+  font-size: 30rpx;
+  margin-left: 0.5cm;
+  margin-top: 0.2cm;
+}
+.picker-wrp{
+  background-color: white;
+   border-radius: 5px;
+  display: flex;
+  margin-right: 0.5cm;
+  margin-top: 0.2cm
+}
+.choose{
+  color: black;
+  width: 4.5cm
+}
+.dream{
+  flex-direction: column;
+  font-size: 30rpx;
+  margin-left: 0.5cm;
+  margin-top: 0.2cm;
+}
+.textarea{
+  background-color: white;
+  color: black;
+  margin-top: 0.2cm;
+  margin-right: 0.5cm;
+  height:200rpx;
+}
+.comculate{
+  display: flex;
+  margin-top: 0.5cm;
+  margin-left: 0.5cm;
+  width: 100%;
+  font-size:30rpx
+}
+.btn-area{
+
+  margin: 0.5cm 0.7cm 0cm 0.7cm;
+  height: 2cm;
+  display: flex;
+}
+
+.wumubiao{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  position: absolute
+}
+.wumubiao.container{
+  width: 200rpx;
+  height: 200rpx;
+  text-align: center;
+}
