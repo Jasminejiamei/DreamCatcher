@@ -13,7 +13,9 @@ Page({
    date:'2019-11-14',
    focus:false,
    targetindex:0,
-   targets:[]  //应该是dcindextest里的数组，但是我不会调
+   targets:[
+     {endtime:'2019-11.27'}
+   ]  //应该是dcindextest里的数组，但是我不会调
   },
 
   /**
@@ -26,7 +28,8 @@ Page({
     }).then(res => {
       //从target数据库中获取属于当前这个用户的目标
       db.collection('target').where({
-        _openid: res.result.openid
+        // _openid: res.result.openid
+        _openid:q80pGeSrpqOp06vk5I
       }).get().then(res => {
         //当前这个用户还未添加过目标
         if (res.data.length == 0) {
