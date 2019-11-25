@@ -4,8 +4,81 @@ Page({
   /**
    * 页面的初始数据
    */
-  data: {
 
+  data: {
+   targetday:'___',
+   show:0,
+   date:'2019-11-14',
+   focus:false,
+   targetindex:0,
+   target:1  //应该是dcindextest里的数组，但是我不会调
+  },
+  /**
+   * 查看目标
+   */
+  formSubmit:function(e){
+    console.log('form发生了submit事件，携带数据为：',e.detail.value),
+    console.log(this.data.date)
+  },
+  
+  /**
+   * 点击第一个目标
+   * 
+   */
+  target1: function (event) {
+    this.setData({
+      show: 1,
+      targetindex:1
+    })
+  },
+  target2: function (event) {
+    this.setData({
+      show: 1,
+      targetindex:2
+    })
+  },
+  target3: function (event) {
+    this.setData({
+      show: 1,
+      targetindex: 3
+    })
+  },
+  target4: function (event) {
+    this.setData({
+      show: 1,
+      targetindex: 4
+    })
+  },
+  target5: function (event) {
+    this.setData({
+      show: 1,
+      targetindex: 5
+    })
+  },
+   /**
+   * 关闭第一个目标
+   * 
+   */
+  closedream:function(event){
+    this.setData({
+      show:0
+    })
+  },
+  bindDateChange: function(e) {
+    this.setData({
+      date: e.detail.value,
+    })
+  },
+  bindTextAreaBlur:function(e){
+    console.log(e.detail.value)
+  },
+  jisuan:function(event){
+    var t=new Date();
+    console.log(t);
+    console.log(this.data.targetday)
+    this.setData({ 
+        targetday:this.data.targetday-t
+    })
   },
 
   /**

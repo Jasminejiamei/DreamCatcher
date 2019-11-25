@@ -45,12 +45,12 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 0,
+			"current": -1,
 			"list": [
 				{
 					"id": 0,
-					"name": "pages/dcIndextest/dcIndextest",
-					"pathName": "pages/dcIndextest/dcIndextest",
+					"name": "pages/dcindex1/dcindex1",
+					"pathName": "pages/dcindex1/dcindex1",
 					"query": "",
 					"scene": null
 				},
@@ -58,6 +58,13 @@
 					"id": -1,
 					"name": "pages/dcIndextest/dcIndextest",
 					"pathName": "pages/dcIndextest/dcIndextest",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/dcIndex/dcIndex",
+					"pathName": "pages/dcIndex/dcIndex",
 					"query": "",
 					"scene": null
 				}
