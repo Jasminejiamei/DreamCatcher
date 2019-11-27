@@ -1,2 +1,23 @@
-<!--miniprogram/pages/targetProgress/targetProgress.wxml-->
-<text>miniprogram/pages/targetProgress/targetProgress.wxml</text>
+<view class="targetProgress"  wx:for="{{Progresslist}}" wx:key="{{index}}">
+ <view>
+   <view class="user_avatar">
+      <image class="avatar" src="{{item.avatar}}"></image>
+   </view>
+   <view class="name_date">
+      <text class="name">{{item.name}}</text>
+      <text class="date">{{item.date}}</text>
+   </view>
+  </view>
+  <view class="target_content" style=" background-color:{{item.color}} ">
+   <text class="target_content_text">目标描述：{{item.text}}<text class="tag">目标标签：{{item.tag}}</text></text>
+  </view>
+  <view class="progress">
+     完成进度：{{item.percent}}
+  </view>
+</view>
+<view class="blank"></view>
+<!-- <view>
+  <button class="button" bindtap="jumpto"><text class="buttontex1">查看我的目标进度</text><text class='buttontex2'> ></text></button>
+</view> -->
+
+

@@ -1,3 +1,8 @@
 {
-  "usingComponents": {}
+  "usingComponents": {},
+  "navigationBarBackgroundColor": "#0A5184",
+  "navigationBarTextStyle": "white",
+  "navigationBarTitleText": "目标广场",
+  "backgroundColor": "white",
+  "enablePullDownRefresh": true
 }

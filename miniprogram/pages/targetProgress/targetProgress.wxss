@@ -1,1 +1,66 @@
-/* miniprogram/pages/targetProgress/targetProgress.wxss */
+.targetground{
+  padding-bottom: 5rpx;
+  border-bottom: 3rpx dashed rgb(230, 230, 230);
+}
+.user_avatar{
+  display:  inline-block;
+}
+.avatar{/*用户头像*/
+  width: 120rpx;
+  height: 120rpx;
+  margin-top: 20rpx;
+  margin-left: 15rpx;
+  border-radius: 50%;
+}
+.name_date{
+  width: 600rpx;
+  display:  inline-block;
+  /*background-color:  blanchedalmond;*/
+}
+.name{/*昵称*/
+  font-size: 0.8rem;
+}
+.date{/*日期*/
+  font-size: 0.8rem;
+  padding-left: 350rpx;
+}
+.target_content{/*目标内容*/
+  width: 594rpx;
+  height: 152rpx;
+  margin-left: 134rpx;
+  margin-top: 10rpx;
+  border:4rpx solid rgb(230, 230, 230);
+}
+.target_content_text{
+  font-size: 1.0rem;
+  position:  relative;
+}
+.tag{
+  width: 180rpx;
+  height: 100rpx;
+  position: absolute;
+  right: -415rpx;
+  bottom: -165rpx;
+  font-size: 0.6rem;
+}
+.progress{
+  margin-left: 565rpx;
+  font-size: 0.6rem;
+}
+.blank{
+  width:750rpx;
+  height: 130rpx;
+}
+.button{
+  width:750rpx;
+  height: 130rpx;
+  bottom:0rpx;
+  position:fixed;
+}
+.buttontex1{
+  font-size: 1rem;
+}
+.buttontex2{
+  font-weight:  bolder;
+  font-size: 1.2rem;
+}
