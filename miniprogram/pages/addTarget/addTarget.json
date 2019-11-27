@@ -1,5 +1,10 @@
 {
   "usingComponents": {
-    "van-checkbox": "vant-weapp/checkbox"
-  }
+    "van-checkbox": "vant-weapp/checkbox",
+    "van-notify":"vant-weapp/notify"
+  },
+  "navigationBarBackgroundColor": "#0033CC",
+  "navigationBarTextStyle": "white",
+  "navigationBarTitleText": "添加目标",
+  "backgroundColor": "white"
 }
