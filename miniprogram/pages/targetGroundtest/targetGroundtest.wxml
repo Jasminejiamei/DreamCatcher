@@ -1,0 +1,20 @@
+<button bindtap="looktargrtground">looklook</button>
+
+<button bindtap="addRecord">add</button>
+
+<!--<view wx:for="{{targetGround}}" wx:key="{{index}}">
+ -- / <view>截止时间: "{{item.endtime}}"</view>
+   <view>目标标签: "{{item.targetLabel}}"</view>
+   <view>目标详情: "{{item.targetDetail}}"</view>
+</view> -->
+
+<!--<view  wx:for="{{targetGround}}" wx:key="{{index}}">
+   <button  bindtap="clickXin"
+   data-attentionindex="{{index}}"
+   class="XinXin">{{index}}</button>
+</view>-->
+
+<button bintap='myAttentiontarget'>查看我关注的目标进度</button>
+
+
+

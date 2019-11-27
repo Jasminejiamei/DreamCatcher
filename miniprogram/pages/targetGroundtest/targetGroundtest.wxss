@@ -1,0 +1,9 @@
+/* pages/targetGroundtest/targetGroundtest.wxss */
+.XinXin{
+  height: 60rpx;
+  width: 90rpx;
+  background: rgb(52, 98, 184);
+  color: rgb(37, 11, 11);
+  font-size: 26rpx;
+  margin-top: 80rpx;
+}

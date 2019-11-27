@@ -107,6 +107,27 @@
 					"id": -1,
 					"name": "pages/addTarget/addTarget",
 					"pathName": "pages/addTarget/addTarget",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/targetGroundtest/targetGroundtest",
+					"pathName": "pages/targetGroundtest/targetGroundtest",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/targetGroundtest/targetGroundtest",
+					"pathName": "pages/targetGroundtest/targetGroundtest",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/targetProgresstest/targetProgresstest",
+					"pathName": "pages/targetProgresstest/targetProgresstest",
 					"scene": null
 				}
 			]
