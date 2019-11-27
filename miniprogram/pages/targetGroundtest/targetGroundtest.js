@@ -291,8 +291,8 @@ Page({
   //   //   //if(this.data.targetGround[i].is)
   //   // }
   // },
-
-  //发现了一点点规律
+  //从target数据库根据isUpload将数据放入targetGround,然后在targetGround根据isAnonymous去请求
+  //userInformation数据库，把昵称和头像放入targetGround
   onLoad: function(options) {
     var index = []
     db.collection('target').where({
@@ -340,24 +340,24 @@ Page({
     })
   },
   
-  //如果目标广场没有目标该如何处理
-  // clickXin: function (e) {
-  //   INDEX = e.target.dataset.attentionindex;
-  //   db.collection('likeIt').add({
-  //     data:{
-  //       endtime: this.data.targetGround[INDEX].endtime,
-  //       isAnonymous: this.data.targetGround[INDEX].isAnonymous,
-  //       isUpload: this.data.targetGround[INDEX].isUpload,
-  //       targetDetail: this.data.targetGround[INDEX].targetDetail,
-  //       targetLabel: this.data.targetGround[INDEX].targetLabel,
+ 
+  clickXin: function (e) {
+    INDEX = e.target.dataset.attentionindex;
+    db.collection('likeIt').add({
+      data:{
+        endtime: this.data.targetGround[INDEX].endtime,
+        isAnonymous: this.data.targetGround[INDEX].isAnonymous,
+        isUpload: this.data.targetGround[INDEX].isUpload,
+        targetDetail: this.data.targetGround[INDEX].targetDetail,
+        targetLabel: this.data.targetGround[INDEX].targetLabel,
 
-  //     }
-  //   }).then(res => {
-  //     console.log(res);
-  //   }).catch(err => {
-  //     console.log(err);
-  //   })
-  // },
+      }
+    }).then(res => {
+      console.log(res);
+    }).catch(err => {
+      console.log(err);
+    })
+  },
 
   myAttentiontarget: function(e) {
      
