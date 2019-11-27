@@ -22,7 +22,7 @@ Page({
               console.log(res.userInfo);
               //用户已经授权过
               wx.switchTab ({
-                url: '../dcIndex/dcIndex',
+                url: '../dcindex1/dcindex1',
               })
             }
           });
@@ -49,7 +49,7 @@ Page({
       })
       //授权成功后，跳转进入小程序首页
       wx.switchTab ({
-        url: '../dcIndex/dcIndex',
+        url: '../dcindex1/dcindex1',
       })
     } else {
       //用户按了拒绝按钮
