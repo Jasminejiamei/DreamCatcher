@@ -1,1 +1,81 @@
-/* miniprogram/pages/targetGround/targetGround.wxss */
+.targetground{
+  padding-bottom: 5rpx;
+  border-bottom: 3rpx dashed rgb(230, 230, 230);
+}
+.user_avatar{
+  display:  inline-block;
+}
+.avatar{/*用户头像*/
+  width: 120rpx;
+  height: 120rpx;
+  margin-top: 20rpx;
+  margin-left: 15rpx;
+  border-radius: 50%;
+}
+.name_date{
+  width: 600rpx;
+  display:  inline-block;
+}
+.name{/*昵称*/
+  font-size: 0.8rem;
+}
+.date{/*日期*/
+  font-size: 0.8rem;
+  padding-left: 350rpx;
+}
+.target_content{/*目标内容*/
+  width: 594rpx;
+  height: 152rpx;
+  margin-left: 134rpx;
+  margin-top: 10rpx;
+  border:4rpx solid rgb(230, 230, 230);
+}
+.target_content_text{
+  font-size: 1.0rem;
+  position:  relative;
+}
+.tag{
+  width: 180rpx;
+  height: 100rpx;
+  position: absolute;
+  right: -415rpx;
+  bottom: -165rpx;
+  font-size: 0.6rem;
+}
+.attent{
+  margin-left: 595rpx;
+  font-size: 0.6rem;
+}
+.attent_goal{
+  display:  inline-block;
+  margin-right: 10rpx;
+}
+.attent_like{
+  display:  inline-block;
+}
+.attent_notlike{
+  display:  inline-block;
+}
+.like{
+  width:35rpx;
+  height: 30rpx;
+  margin-left: 8rpx;
+  margin-top: 10rpx;
+}
+.blank{
+  width:750rpx;
+  height: 130rpx;
+}
+.button{
+  width:750rpx;
+  height: 130rpx;
+  bottom:0rpx;
+  position:fixed;
+}
+.buttontex1{
+  font-size: 1rem;
+}
+.buttontex2{
+  font-weight:  bolder;
+  font-size: 1.2rem;
+}
