@@ -53,6 +53,19 @@
 					"pathName": "pages/login/login",
 					"query": "",
 					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/addTarget/addTarget",
+					"pathName": "pages/addTarget/addTarget",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/logintest/logintest",
+					"pathName": "pages/logintest/logintest",
+					"scene": null
 				}
 			]
 		}

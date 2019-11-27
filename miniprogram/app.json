@@ -1,12 +1,13 @@
 {
   "cloud": true,
   "pages": [
+    "pages/login/login",
     "pages/dcindex1/dcindex1",
     "pages/dcIndex/dcIndex",
     "pages/addTarget/addTarget",
     "pages/logintest/logintest",
     "pages/dcIndextest/dcIndextest",
-    "pages/login/login",
+    
     "pages/targetGround/targetGround",
     "pages/targetProgress/targetProgress"
     

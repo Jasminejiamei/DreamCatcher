@@ -17,7 +17,7 @@ Page({
               var avatarUrl = userInfo.avatarUrl
               console.log(res.userInfo);
               //用户已经授权过
-              wx.redirectTo({
+              wx.switchTab ({
                 url: '../dcIndex/dcIndex',
               })
             }
@@ -44,7 +44,7 @@ Page({
         }
       })
       //授权成功后，跳转进入小程序首页
-      wx.redirectTo({
+      wx.switchTab({
         url: '../dcIndex/dcIndex',
       })
     } else {
