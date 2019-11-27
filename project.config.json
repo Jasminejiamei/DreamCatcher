@@ -47,31 +47,24 @@
 		"miniprogram": {
 			"current": -1,
 			"list": [
+        {
+          "id": -1,
+          "name": "pages/login/login",
+          "pathName": "pages/login/login",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": 0,
+          "name": "pages/dcindex1/dcindex1",
+          "pathName": "pages/dcindex1/dcindex1",
+          "query": "",
+          "scene": null
+        },
 				{
 					"id": -1,
 					"name": "pages/targetGround/targetGround",
 					"pathName": "pages/targetGround/targetGround",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/addTarget/addTarget",
-					"pathName": "pages/addTarget/addTarget",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": 3,
-					"name": "pages/logintest/logintest",
-					"pathName": "pages/logintest/logintest",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/targetProgress/targetProgress",
-					"pathName": "pages/targetProgress/targetProgress",
 					"query": "",
 					"scene": null
 				}
