@@ -1,7 +1,6 @@
 <!--miniprogram/pages/dcindex1/dcindex1.wxml-->
 <view class='a' wx:if="{{targets.length>0}}">
  <view class="c0"> 
-
   <image src="/images/one.png " 
   style="width:80px;height:80px" 
   
@@ -18,7 +17,7 @@
 
   <view class="b0"> 
   <image src="/images/note.png" 
-   style="width:{{200}}px;;height:{{200}}px;"></image>
+   style="width:{{200}}px;;height:{{200}}px;" bindtap='lick'></image>
  </view>
 
  <view class="d0">
@@ -36,57 +35,60 @@
   style="width:90px;height:70px" 
   wx-if="{{targets.length>=5}}" ></image>
   <p style="position:relative;top:-30px;right:60px;" bindtap="target5" >{{targets[4].targetLabel}}</p>
-
- </view>
+  </view>
 </view>
 
-<view class="checkdream" wx:if="{{show==1}}">
-<form bindsubmit="formSubmit" bindreset="formReset">
- <view class="titleclose">
-  <text class="title" >查看目标</text> 
-  <image src="/images/关闭.png " style="width:20px;height:20px" class="close" bindtap="closedream"></image>
-  </view>
- <view class="date">
-   <view>当前选择的结束时间:</view>
-   <picker mode="date" 
-   value="{{lookfortarget.endtime}}" 
-   start="2019-11-15" 
-   end="2100-09-01" 
-   bindchange="bindDateChange">    
-   <view class="picker-wrp">
-      <view class="choose" >{{lookfortarget.endtime}}</view>
-      <image src="/images/date.png" style="width:20px;height:20px" ></image>
-    </view>
-    </picker>
- </view>  
- <view class="dream">
-   <view>目标详情：</view>
-   <view class="textarea" >
-     <textarea bindblur="bindTextAreaBlur" auto-height value="{{lookfortarget.targetDetail}}"></textarea>
+
+<view wx:if="{{show==1}}" style="height: 100%;width: 100%;">
+    <view class="checkdream">
+    <view class="box" >
+    <form bindsubmit="formSubmit" bindreset="formReset">
+    <view class="titleclose">
+      <text class="title" >查看目标</text> 
+      <image src="/images/close.png " style="width:20px;height:20px" class="close" bindtap="closedream"></image>
+      </view>
+    <view class="date">
+      <view>当前选择的结束时间:</view>
+      <picker mode="date" 
+      value="{{lookfortarget.endtime}}" 
+      start="{{nowTime}}" 
+      bindchange="bindDateChange">    
+      <view class="picker-wrp">
+          <view class="choose" >{{date}}</view>
+          <image src="/images/date.png" style="width:20px;height:20px" ></image>
+        </view>
+        </picker>
     </view>  
- </view>
- <view class="comculate" >
-   <image src="/images/时间.png"  style="width:20px;height:20px" bindtap="jisuan"></image>
-   <view class="targetday">
-    <text >距离目标达成还有</text>
-    <text>{{targetday}}</text>
-    <text>天</text>
-   </view>
- </view>
- <view class="btn-area">
-   <view class="bt1">
-   <button form-type="submit" style="font-size:25rpx;height:0.8cm;width=2cm;margin-righr:0.5cm">保存修改</button>
-   </view>
-   <view class="bt2" >
-   <button style="font-size:25rpx;height:0.8cm;width=2cm;margin-left:0.9cm" bindtap="clickdelete" data-index="{{lookfortarget.targetindex}}">删除目标</button>
-   </view>
- </view>
-</form>
+    <view class="dream">
+      <view>目标详情：</view>
+      <view class="textarea" >
+        <textarea bindblur="bindTextAreaBlur" auto-height value="{{lookfortarget.targetDetail}}"></textarea>
+        </view>  
+    </view>
+    <view class="comculate" >
+      <image src="/images/时间.png"  style="width:20px;height:20px" bindtap="jisuan"></image>
+      <view class="targetday">
+        <text >距离目标达成还有</text>
+        <text>{{targetday}}</text>
+        <text>天</text>
+      </view>
+    </view>
+    <view class="btn-area">
+      <view class="bt1">
+      <button form-type="submit" style="font-size:25rpx;height:0.8cm;width=2cm;margin-righr:0.5cm" bindtap="clickChange">保存修改</button>
+      </view>
+      <view class="bt2" >
+      <button style="font-size:25rpx;height:0.8cm;width=2cm;margin-left:0.9cm" bindtap="clickdelete" data-index="{{lookfortarget.targetindex}}">删除目标</button>
+      </view>
+    </view>
+    </form>
+    </view>
+    </view>
 </view>
 
  <view class='wumubiao' wx:if="{{targets.length==0}}" >
    <view class='container'>
-    <image  src="/images/note.png" style="width:{{200}}px;;height:{{200}}px;"></image> 
-    <text space="emsp">   当前还没有目标喔，\n快去点击下方“+”号添加目标吧</text>
+    <image  src="/images/note.png" style="width:{{200}}px;;height:{{200}}px;" bindtap='lick' ></image> 
+    <text space="emsp">   当前还没有目标喔，\n快去点击上方图片添加目标吧</text>
    </view>
  </view>

@@ -64,8 +64,7 @@ Page({
       console.log(err);
     })
   },
-
-
+ 
   //点击了保存修改,需要获取用户输入的新的结束时间以及目标详情，然后再调用updateTarget函数，传入更改之后的结束时间以及目标详情
   clickSave: function () {
     var endtime = '';

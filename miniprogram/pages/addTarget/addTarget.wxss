@@ -1,28 +1,36 @@
 /* miniprogram/pages/addTarget/addTarget.wxss */
 /* 设置整体布局 */
 .wrap{
-  padding: 80rpx 30rpx 30rpx 30rpx
+  margin: 60rpx 30rpx 30rpx 30rpx;
+}
+.content{
+  margin:0 20rpx;
 }
 /* 时间选择器样式 */
-.section{
-  width: 80%;
-  border: 2px solid #7c836350;
-  margin: 0 auto;
-  margin-top:30rpx;
-  margin-bottom: 30rpx;
-  font-size: 32rpx;
-  padding: 15rpx
+.section1{
+width: 90%;
+border: 1rpx solid rgb(145, 138, 138);
+margin: 30rpx 20rpx;
+font-size: 32rpx;
+border-radius: 5rpx;
+height: 60rpx;
 }
+picker {
+position: relative;
+top: 3px;
+}
+
 /* 日历icon */
 .calender{
   width: 20rpx;
-  padding-right: 10rpx
+  padding-right: 10rpx;
 }
 /* 输入文本框 */
 .tar-content{
   width: 90%;
-  border: 2px solid #7c836350;
-  margin:20rpx
+  border: 1rpx solid rgb(145, 138, 138);
+  margin: 30rpx 20rpx;
+  border-radius: 5rpx;
 }
 /* 标签 */
 .flag{
@@ -45,15 +53,23 @@
   height: 60rpx;
   border-radius: 25rpx 25rpx 25rpx 10rpx;
   font-size: 25rpx;
-  background:blue;
+  background:#0A5184;
   color: white
 }
 .checkbox{
   font-size: 30rpx;
 }
 
+.van-checkbox {
+  margin-top: 45rpx;
+}
+
+
 /* 让按钮固定在页面底部 */
 .footer{
-margin-top: 40%;
-margin-left: 40%
+  display: flex;
+  justify-content: left;
+  position: relative;
+  top: 126rpx;
+  margin-left: 20rpx;
 }

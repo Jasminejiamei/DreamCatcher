@@ -3,8 +3,8 @@
 <view class="wrap">
 <view class="content">  
 <text>选择目标结束时间：</text>
-<!-- 日期选择器 -->
-<view class="section">
+<!-- 日期选择器 --> 
+<view class="section1">
   <picker mode="date" value="{{date}}" start="{{nowTime}}"  bindchange="bindDateChange">
     <view class="picker">
     <van-icon class="calender" name="calender-o" />Enter Date:{{date}}
@@ -30,6 +30,6 @@
 <van-notify id="van-notify" />
 <!-- 将保存放到底部 -->
 <view class="footer">
-<van-button size="small" color="#7232dd"  bindtap="addTarget">保存</van-button>
+<van-button size="small" color="#0A5184"  bindtap="addTarget">保存</van-button>
 </view>
 </view>

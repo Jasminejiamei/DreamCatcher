@@ -35,11 +35,6 @@
         "selectedIconPath": "images/我的目标先.png"
       },
       {
-        "pagePath": "pages/addTarget/addTarget",
-        "iconPath": "images/添加.png",
-        "selectedIconPath": "images/添加.png"
-      },
-      {
         "pagePath": "pages/targetGround/targetGround",
         "text": "目标广场",
         "iconPath": "images/目标广场.png",

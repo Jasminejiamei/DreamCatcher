@@ -1,6 +1,7 @@
 // miniprogram/pages/dcindex1/dcindex1.js
 const db = wx.cloud.database()
 var INDEX = '' //获取用户点击了的标签对应的目标的index
+
 Page({
 
   /**
@@ -39,22 +40,66 @@ Page({
         } else {
           this.setData({
             targets: res.data,
+            nowTime: new Date(),
           })
           console.log(this.data.targets);
         }
       })
     })
   },
+  // 添加目标页面
+  lick:function(){
+    wx.navigateTo({
+      url: '../addTarget/addTarget',
+    })
+  },
 
+  //新的目标详情以及结束时间的参数待传，后台数据库定义的日期是字符串类型
+  updateTarget: function (INDEX, endtime, targetDetail) {
+    var that = this;
+    var index = this.data.targets[INDEX]._id;
+    db.collection('target').doc(index).update({
+      // data 传入需要局部更新的数据：time,context
+      data: {
+        endtime: endtime,
+        targetDetail: targetDetail
+      }
+    }).then(res => {
+      wx.showToast({
+        title: '修改成功',
+        icon: '修改成功!',
+        duration: 1000,
+        success: res => {
+          that.setData({
+            show: 0,
+          });
+        }
+      });
+    }).catch(err => {
+      console.log(err);
+    })
+  },
 
   /**
-   * 查看目标
+   * 表单修改
    */
   formSubmit:function(e){
-    console.log('form发生了submit事件，携带数据为：',e.detail.value),
-    console.log(this.data.date)
+    INDEX = this.data.lookfortarget.targetindex;
+    this.setData({
+      date: this.data.date,
+    })
+    var endtime = this.data.date;
+    var targetDetail = this.data.changecontent;
+    this.updateTarget(INDEX,endtime,targetDetail);
+  },
+  bindTextAreaBlur: function (e) {
+    this.setData({
+      changecontent: e.detail.value,
+    })
+    console.log(this.data.changecontent)
   },
   
+
   /**
    * 点击第一个目标
    * 
@@ -114,9 +159,6 @@ Page({
       date: e.detail.value,
     })
   },
-  bindTextAreaBlur:function(e){
-    console.log(e.detail.value)
-  },
 
   jisuan:function(event){
     var t=new Date();
@@ -142,6 +184,7 @@ Page({
   },
   deleteTarget: function (INDEX) {
     var index = this.data.targets[INDEX]._id;
+    var that = this;
     wx.showModal({
       title: '温馨提示',
       content: '确认删除？',
@@ -151,8 +194,14 @@ Page({
             .then(res => {
               wx.showToast({
                 title: '删除成功',
-                icon: '删除成功',
-                duration: 1000
+                icon: '删除成功!',
+                duration: 1000,
+                success:res=>{
+                  that.setData({
+                    targets:[]
+                  });
+                  that.onLoad();
+                }
               });
             }).catch(err => {
               console.log(err);
@@ -160,18 +209,13 @@ Page({
         }
       }
     })
-  //   for(let i = 0;i<this.data.targets.length;i++){
-  //     if(this.data.targets._id == index);
-  //     var newdata = this.data.targets.splice(i, 1);
-  //     this.setData({
-  //       show: 0,
-  //       targets: newdata
-  //     })
-  //   }
-  //   console.log(this.data.targets);
-  // }
     this.setData({
       show: 0,
     })
-    }
+    },
+
+  onShow(){
+    this.onLoad();
+  }
 })
+
