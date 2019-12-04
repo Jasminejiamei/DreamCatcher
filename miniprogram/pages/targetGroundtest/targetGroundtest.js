@@ -20,7 +20,7 @@ Page({
     db.collection('target').where({
       isUpload: true
     }).get().then(res=>{
-      console.log(res);
+      // console.log(res);
       for (var i = 0; i < res.data.length; i++){
         var obj = {};
         obj._openid = res.data[i]._openid;
@@ -38,24 +38,24 @@ Page({
           index[i]=i
         }
       }
-      console.log(this.data.targetGround.length)
-      console.log(index)
+      // console.log(this.data.targetGround.length)
+      // console.log(index)
       for (var i = 0; i < this.data.targetGround.length; i++){
-        console.log(i)
+        // console.log(i)
         if (this.data.targetGround[i].isAnonymous == false){
-          console.log(i)
+          // console.log(i)
           db.collection('userInformation').where({
             _openid: this.data.targetGround[i]._openid
           }).get().then(res=>{
-            console.log(i)
+            // console.log(i)
             var nickName = "targetGround[" + i + "].nickName"
-            console.log(nickName)
+            // console.log(nickName)
             var avatarUrl = "targetGround[" + i + "].avatarUrl"
             this.setData({
               [nickName]: res.data[0].nickName,
               [avatarUrl]: res.data[0].avatarUrl
             })
-            console.log(res.data[0].nickName)
+            // console.log(res.data[0].nickName)
           })
         }
       }
@@ -75,7 +75,7 @@ Page({
 
       }
     }).then(res => {
-      console.log(res);
+      // console.log(res);
     }).catch(err => {
       console.log(err);
     })

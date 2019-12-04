@@ -111,7 +111,7 @@ Page({
           this.setData({
             targets: res.data,
           })
-          console.log(this.data.targets.length);
+          // console.log(this.data.targets.length);
         }
       })
     })
@@ -122,7 +122,7 @@ Page({
         content: '信息填写不完整，请检查时间和目标',
       })
     }else if(this.data.targets.length >= 5){
-      console.log(this.data.targets.length)
+      // console.log(this.data.targets.length)
       wx.showToast({
         title: '已超过五个目标啦~先前去完成噢！',
         icon: 'none',
@@ -135,7 +135,7 @@ Page({
           this.data.targetLabel = this.data.buttons[i].name
         }
       }
-      console.log("标签：" + this.data.targetLabel);
+      // console.log("标签：" + this.data.targetLabel);
       //将数据写入数据库中
       db.collection('target').add({
         data: {
@@ -146,7 +146,7 @@ Page({
           isAnonymous: this.data.isAnonymous
         }
       }).then(res => {
-        console.log(res);
+        // console.log(res);
         //成功返回成功提示
         wx.showToast({
           title: '保存成功',
@@ -162,7 +162,7 @@ Page({
           content:this.data.content,
           buttons: this.data.buttons,
         }),
-        console.log(content);
+        // console.log(content);
         this.onLoad();
       }).catch(err => {
         console.log(err);

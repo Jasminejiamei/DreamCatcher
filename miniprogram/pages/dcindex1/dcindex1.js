@@ -11,7 +11,7 @@ Page({
   data: {
    targetday:'___',
    show:0,
-   date:'2019-11-14',
+   date:'2019-12-05',
    focus:false,
    targetindex:0,
    targets:[],  //应该是dcindextest里的数组，但是我不会调
@@ -42,7 +42,7 @@ Page({
             targets: res.data,
             nowTime: new Date(),
           })
-          console.log(this.data.targets);
+          // console.log(this.data.targets);
         }
       })
     })
@@ -68,15 +68,14 @@ Page({
       wx.showToast({
         title: '修改成功',
         icon: '修改成功!',
-        duration: 1000,
+        duration: 3000,
         success: res => {
           that.setData({
             show: 0,
           });
+          that.onLoad();
         }
-      });
-    }).catch(err => {
-      console.log(err);
+      })
     })
   },
 
@@ -96,7 +95,7 @@ Page({
     this.setData({
       changecontent: e.detail.value,
     })
-    console.log(this.data.changecontent)
+    // console.log(this.data.changecontent)
   },
   
 
@@ -109,15 +108,17 @@ Page({
       show: 1,
       targetindex:0,
       lookfortarget:this.data.targets[0],
+      date: this.data.targets[0].endtime
     })
     this.data.lookfortarget.targetindex = this.data.targetindex;
-    // console.log(this.data.lookfortarget)
+    // console.log(this.data.date)
   },
   target2: function (event) {
     this.setData({
       show: 1,
       targetindex:1,
       lookfortarget: this.data.targets[1],
+      date: this.data.targets[1].endtime
     })
     this.data.lookfortarget.targetindex = this.data.targetindex;
   },
@@ -126,6 +127,7 @@ Page({
       show: 1,
       targetindex: 2,
       lookfortarget: this.data.targets[2],
+      date: this.data.targets[2].endtime
     })
     this.data.lookfortarget.targetindex = this.data.targetindex;
   },
@@ -134,6 +136,7 @@ Page({
       show: 1,
       targetindex: 3,
       lookfortarget: this.data.targets[3],
+      date: this.data.targets[3].endtime
     })
     this.data.lookfortarget.targetindex = this.data.targetindex;
   },
@@ -142,6 +145,7 @@ Page({
       show: 1,
       targetindex: 4,
       lookfortarget: this.data.targets[4],
+      date: this.data.targets[4].endtime
     })
     this.data.lookfortarget.targetindex = this.data.targetindex;
   },
@@ -163,23 +167,24 @@ Page({
   jisuan:function(event){
     var t=new Date();
     var year = t.getFullYear();
-    var month = t.getMonth()+1;
+    var month = t.getMonth() + 1;
     var date = t.getDate(); 
     var startTime = year+'-'+month+'-'+date;
-    console.log(startTime);
-    console.log(this.data.lookfortarget.endtime);
+    // console.log(startTime);
+    // console.log(this.data.lookfortarget.endtime);
     var startdate=new Date(startTime.replace(/-/g,"/"));
     var enddate = new Date(this.data.lookfortarget.endtime.replace(/-/g, "/"));
+    // console.log(startdate,enddate);
     var ms=enddate.getTime()-startdate.getTime();
     var newdays = parseInt(ms / (1000*60*60*24));
-    console.log(newdays);
+    // console.log(newdays);
     this.setData({ 
         targetday:newdays
     })
   },
   clickdelete:function(event){
     INDEX = this.data.lookfortarget.targetindex;
-    console.log(INDEX);
+    // console.log(INDEX);
     this.deleteTarget(INDEX);
   },
   deleteTarget: function (INDEX) {
@@ -198,7 +203,8 @@ Page({
                 duration: 1000,
                 success:res=>{
                   that.setData({
-                    targets:[]
+                    targets:[],
+                    show:0
                   });
                   that.onLoad();
                 }
@@ -209,10 +215,7 @@ Page({
         }
       }
     })
-    this.setData({
-      show: 0,
-    })
-    },
+  },
 
   onShow(){
     this.onLoad();

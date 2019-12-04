@@ -21,7 +21,7 @@
         <!-- <view class="confirm-btn" bindtap='bindGetUserInfo'>
           <text >立即登录</text>
         </view> -->
-         <button class='bottom'  open-type="getUserInfo" style="width:170px;height:32px;padding:0px;" lang="zh_CN" bindgetuserinfo="bindGetUserInfo">
+         <button class='bottom'  open-type="getUserInfo" style="width:170px;height:40px;padding:0px;" lang="zh_CN" bindgetuserinfo="bindGetUserInfo">
           授权登录
         </button>
       </view>

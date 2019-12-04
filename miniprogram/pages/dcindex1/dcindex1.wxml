@@ -50,7 +50,7 @@
     <view class="date">
       <view>当前选择的结束时间:</view>
       <picker mode="date" 
-      value="{{lookfortarget.endtime}}" 
+      value="{{lookfortarget.endtime}}"  
       start="{{nowTime}}" 
       bindchange="bindDateChange">    
       <view class="picker-wrp">
@@ -66,7 +66,7 @@
         </view>  
     </view>
     <view class="comculate" >
-      <image src="/images/时间.png"  style="width:20px;height:20px" bindtap="jisuan"></image>
+      <image src="/images/time.png"  style="width:20px;height:20px" bindtap="jisuan"></image>
       <view class="targetday">
         <text >距离目标达成还有</text>
         <text>{{targetday}}</text>
@@ -75,7 +75,7 @@
     </view>
     <view class="btn-area">
       <view class="bt1">
-      <button form-type="submit" style="font-size:25rpx;height:0.8cm;width=2cm;margin-righr:0.5cm" bindtap="clickChange">保存修改</button>
+      <button form-type="submit" style="font-size:25rpx;height:0.8cm;width=2cm;margin-righr:0.5cm" bindtap="formSubmit">保存修改</button>
       </view>
       <view class="bt2" >
       <button style="font-size:25rpx;height:0.8cm;width=2cm;margin-left:0.9cm" bindtap="clickdelete" data-index="{{lookfortarget.targetindex}}">删除目标</button>
