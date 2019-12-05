@@ -19,7 +19,7 @@ Page({
               var userInfo = res.userInfo
               var nickName = userInfo.nickName
               var avatarUrl = userInfo.avatarUrl
-              console.log(res.userInfo);
+              // console.log(res.userInfo);
               //用户已经授权过
               wx.switchTab ({
                 url: '../dcindex1/dcindex1',

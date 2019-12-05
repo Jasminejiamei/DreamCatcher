@@ -11,6 +11,8 @@ Page({
    * 页面的初始数据
    */
   data: {
+    date:'',
+    content:'',
     modalHidden: true,
     check: false,
     idUpload: false,
@@ -32,12 +34,13 @@ Page({
       title: '添加目标',
     }),
       // 默认第一个按钮被选中
-      this.data.buttons[0].checked = true;
+    this.data.buttons[0].checked = true;
     this.setData({
       buttons: this.data.buttons,
-      nowTime: new Date()
+      nowTime: new Date(),
     })
   },
+
 
   // 时间
   bindDateChange: function (e) {
@@ -108,18 +111,18 @@ Page({
           this.setData({
             targets: res.data,
           })
-          console.log(this.data.targets.length);
+          // console.log(this.data.targets.length);
         }
       })
     })
     //检查信息是否填写完整
-    if (this.data.date == null || this.data.content == null) {
+    if (this.data.date == '' || this.data.content == '') {
       wx.showModal({
         title: '',
         content: '信息填写不完整，请检查时间和目标',
       })
     }else if(this.data.targets.length >= 5){
-      console.log(this.data.targets.length)
+      // console.log(this.data.targets.length)
       wx.showToast({
         title: '已超过五个目标啦~先前去完成噢！',
         icon: 'none',
@@ -132,7 +135,7 @@ Page({
           this.data.targetLabel = this.data.buttons[i].name
         }
       }
-      console.log("标签：" + this.data.targetLabel);
+      // console.log("标签：" + this.data.targetLabel);
       //将数据写入数据库中
       db.collection('target').add({
         data: {
@@ -143,7 +146,7 @@ Page({
           isAnonymous: this.data.isAnonymous
         }
       }).then(res => {
-        console.log(res);
+        // console.log(res);
         //成功返回成功提示
         wx.showToast({
           title: '保存成功',
@@ -154,6 +157,12 @@ Page({
         wx.switchTab({
           url: '../dcindex1/dcindex1',
         })
+        this.setData({
+          date:[],
+          content:this.data.content,
+          buttons: this.data.buttons,
+        }),
+        // console.log(content);
         this.onLoad();
       }).catch(err => {
         console.log(err);

@@ -52,6 +52,10 @@ page{
   50% {opacity: 1;}
   100% {opacity: 1;transform: translate3d(0,450rpx,0);}
 }
+.bd{
+  justify-content: center;
+  display: flex;
+}
 .hd {
   position: absolute;
   top: 0;
@@ -62,13 +66,12 @@ page{
   transition: all .35s ease;
 }
 .logo {
-  position: absolute;
+  position: relative;
   z-index: 2;
-  left: 48%;
+  left: 393rpx;
   bottom: 200rpx;
   width: 250rpx;
   height: 220rpx;
-  margin-left: -80rpx;
   border-radius: 160rpx;
   animation: sway 10s ease-in-out infinite;
   opacity: .95;

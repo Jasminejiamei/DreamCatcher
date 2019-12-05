@@ -35,7 +35,7 @@ Page({
   //点击喜欢或撤回
   tap_like:function(e){
     var Index=e.currentTarget.dataset.index;
-    console.log(Index);
+    // console.log(Index);
     var list=this.data.targetlist;
     for(let i in list) {
       if(i==Index){
@@ -50,7 +50,7 @@ Page({
   },
   tap_notlike: function (e) {
     var Index = e.currentTarget.dataset.index;
-    console.log(Index);
+    // console.log(Index);
     var list = this.data.targetlist;
     for (let i in list) {
       if (i == Index) {
