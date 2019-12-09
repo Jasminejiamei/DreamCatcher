@@ -7,9 +7,9 @@ Page({
    * 页面的初始数据
    */
   data: {
-    targetGround: [],
-    likeIt:[],
-    userInfo:[],
+    targetGround: [],//这是目标广场所需要的数据
+    likeIt:[],       //这是关注的目标
+    userInfo:[],     //这是用户的信息
     myattentiontarget:[],
     targetProgress:[]
   },
@@ -35,8 +35,11 @@ Page({
         obj.isAnonymous = res.data[i].isAnonymous;
         obj.isUpload = res.data[i].isUpload;
         obj.targetDetail = res.data[i].targetDetail;
+        obj.targetLabel = res.data[i].targetLabel;
         obj.nickName = '';
         obj.avatarUrl = '';
+        obj.like =0;
+
 
         let targetGround = this.data.targetGround;
         targetGround.push(obj);

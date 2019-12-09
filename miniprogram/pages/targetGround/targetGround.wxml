@@ -1,15 +1,15 @@
-<view class="targetground"  wx:for="{{targetlist}}" wx:key="{{index}}">
+<view class="targetground"  wx:for="{{targetGround}}" wx:key="{{index}}">
  <view>
    <view class="user_avatar">
-      <image class="avatar" src="{{item.avatar}}"></image>
+      <image class="avatar" src="{{item.avatarUrl}}"></image>
    </view>
    <view class="name_date">
-      <text class="name">{{item.name}}</text>
-      <text class="date">{{item.date}}</text>
+      <view class="name">{{item.nickName}}</view>
+      <view class="date">{{item.endtime}}</view>
    </view>
   </view>
   <view class="target_content" style=" background-color:{{item.color}} ">
-   <text class="target_content_text">目标描述：{{item.text}}<text class="tag">目标标签：{{item.tag}}</text></text>
+   <text class="target_content_text">目标描述：{{item.targetDetail}}<text class="tag">目标标签：{{item.targetLabel}}</text></text>
   </view>
   <view class="attent">
      <view class="attent_goal">关注目标</view>

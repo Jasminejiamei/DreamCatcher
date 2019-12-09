@@ -18,10 +18,12 @@
 }
 .name{/*昵称*/
   font-size: 0.8rem;
+  display: inline-block;
 }
 .date{/*日期*/
   font-size: 0.8rem;
-  padding-left: 350rpx;
+  margin-left: 200rpx;
+  display: inline-block;
 }
 .target_content{/*目标内容*/
   width: 594rpx;
@@ -38,7 +40,7 @@
   width: 180rpx;
   height: 100rpx;
   position: absolute;
-  right: -415rpx;
+  right: -200rpx;
   bottom: -165rpx;
   font-size: 0.6rem;
 }

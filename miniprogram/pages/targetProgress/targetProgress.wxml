@@ -1,18 +1,18 @@
-<view class="targetProgress"  wx:for="{{Progresslist}}" wx:key="{{index}}">
+<view class="targetProgress"  wx:for="{{targetProgress}}" wx:key="{{index}}">
  <view>
    <view class="user_avatar">
-      <image class="avatar" src="{{item.avatar}}"></image>
+      <image class="avatar" src="{{item.avatarUrl}}"></image>
    </view>
    <view class="name_date">
-      <text class="name">{{item.name}}</text>
-      <text class="date">{{item.date}}</text>
+      <text class="nickName">{{item.nickName}}</text>
+      <text class="endtime">{{item.endtime}}</text>
    </view>
   </view>
   <view class="target_content" style=" background-color:{{item.color}} ">
-   <text class="target_content_text">目标描述：{{item.text}}<text class="tag">目标标签：{{item.tag}}</text></text>
+   <text class="target_content_text">目标描述：{{item.targetDetail}}<text class="tag">目标标签：{{item.targetLabel}}</text></text>
   </view>
   <view class="progress">
-     完成进度：{{item.percent}}
+     完成进度：60%
   </view>
 </view>
 <view class="blank"></view>
